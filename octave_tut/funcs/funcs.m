@@ -9,3 +9,8 @@ h = plot(t, v);
 axis([-1 4 -1 2]);
 saveas(h, 'ustep.png');
 
+
+% Lambda abs
+
+f1 = @(x, y) 2 * x + y
+

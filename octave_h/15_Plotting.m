@@ -5,13 +5,13 @@ figure(1);
 hold on;
 plot(x, sin(x));
 hold off;
-print("IMG/01_plot.png");
+print("IMG/15_Plotting/01_plot.png");
 
 figure(2);
 hold on;
 fplot(@sin, [-10, 10], 201);
 hold off;
-print("IMG/02_fplot.png");
+print("IMG/15_Plotting/02_fplot.png");
 
 
 y1 = 0.1 .* x.^2 - 1;
@@ -19,7 +19,7 @@ figure(3);
 hold on;
 plot(x, y1, "*", "markersize", 5);
 hold off;
-print("IMG/03_mod.png");
+print("IMG/15_Plotting/03_mod.png");
 
 
 y = 10 .^ x;
@@ -29,7 +29,7 @@ semilogy(x, y);
 semilogy(x, x);
 title("Log scale");
 hold off;
-print("IMG/04_log.png");
+print("IMG/15_Plotting/04_log.png");
 
 
 figure(5);
@@ -37,21 +37,21 @@ hold on;
 hist(randn(1000, 1), 30, 1);
 title("Hist");
 hold off;
-print("IMG/05_hist.png");
+print("IMG/15_Plotting/05_hist.png");
 
 figure(6);
 hold on;
 bar(rand(10, 1));
 title("Bar");
 hold off;
-print("IMG/06_bar.png");
+print("IMG/15_Plotting/06_bar.png");
 
 figure(7);
 hold on;
 barh(rand(10, 3), 0.9, "stacked");
 title("BarH");
 hold off;
-print("IMG/07_barh.png");
+print("IMG/15_Plotting/07_barh.png");
 
 
 figure(8);
@@ -61,7 +61,7 @@ x = -10 : 0.5 : 10;
 stairs(x, cos(x));
 title("Stairs");
 hold off;
-print("IMG/08_stairs.png");
+print("IMG/15_Plotting/08_stairs.png");
 
 x = 1 : 10;
 y = x * 2;
@@ -70,7 +70,7 @@ hold on;
 stem(x, y, "fill");
 title("Stem");
 hold off;
-print("IMG/09_stem.png");
+print("IMG/15_Plotting/09_stem.png");
 
 
 x = 2 : 0.2 : 4;
@@ -82,7 +82,7 @@ hold on;
 contour(X, Y, Z);
 title("Contour");
 hold off;
-print("IMG/10_contour.png");
+print("IMG/15_Plotting/10_contour.png");
 
 
 x = 0 : 0.25 : 5;
@@ -94,7 +94,7 @@ hold on;
 errorbar(x, y, ym, yp, "#~");
 title("Errorbar");
 hold off;
-print("IMG/11_errorbar.png");
+print("IMG/15_Plotting/11_errorbar.png");
 
 
 t = 0 : 0.1 : 6*pi;
@@ -104,7 +104,7 @@ polar(t, t);
 polar(t, 6 - 6 .* cos(t))
 title("Polar");
 hold off;
-print("IMG/12_polar.png");
+print("IMG/15_Plotting/12_polar.png");
 
 
 figure(13);
@@ -114,7 +114,7 @@ p = p ./ sum(p);
 pie(p, {"a", "b", "c", "d"});
 title("Pie");
 hold off;
-print("IMG/13_pie.png");
+print("IMG/15_Plotting/13_pie.png");
 
 
 figure(14);
@@ -123,7 +123,7 @@ hold on;
 quiver(x, y, sin(2 * pi * x/10), cos(2 * pi * y/10));
 title("Quiver");
 hold off;
-print("IMG/14_quiver.png");
+print("IMG/15_Plotting/14_quiver.png");
 
 
 figure(15);
@@ -132,7 +132,7 @@ hold on;
 pcolor(x, y, rand(10, 10));
 title("Pcolor");
 hold off;
-print("IMG/15_pcolor.png");
+print("IMG/15_Plotting/15_pcolor.png");
 
 x = 0 : 0.1 : 7;
 y = sin(x);
@@ -141,7 +141,7 @@ hold on;
 area(x, y);
 title("Area");
 hold off;
-print("IMG/16_area.png");
+print("IMG/15_Plotting/16_area.png");
 
 [X, Y] = meshgrid(-8 : 0.2 : 8);
 r = sqrt(X.^2 + Y.^2) + eps;
@@ -152,7 +152,7 @@ meshc(X, Y, Z);
 hold on;
 title("MeshC");
 hold off;
-print("IMG/17_meshc.png");
+print("IMG/15_Plotting/17_meshc.png");
 
 
 figure(18);
@@ -163,7 +163,7 @@ title("Plot3");
 view(5, 45); % azimuth, altitude
 grid on;
 hold off;
-print("IMG/18_plot3.png");
+print("IMG/15_Plotting/18_plot3.png");
 
 hold on;
 [X, Y] = meshgrid(-8 : 0.4 : 8);
@@ -183,7 +183,7 @@ title('meshz');
 subplot(2, 2, 4);
 contour(X, Y, Z);
 title('contour');
-print('IMG/19_surfaces.png');
+print('IMG/15_Plotting/19_surfaces.png');
 hold off;
 
 
@@ -198,7 +198,7 @@ xlabel("x");
 ylabel("sin(x)");
 text(pi, 0.7, "annotation");
 legend("sin(x)");
-print("IMG/20_annot.png");
+print("IMG/15_Plotting/20_annot.png");
 
 
 % Common
@@ -213,4 +213,4 @@ subplot(1, 2, 2);
 [x, y, z] = peaks();
 mesh(x, y, z);
 title("Peaks");
-print("IMG/21_test.png");
+print("IMG/15_Plotting/21_test.png");

@@ -214,3 +214,56 @@ subplot(1, 2, 2);
 mesh(x, y, z);
 title("Peaks");
 print("IMG/15_Plotting/21_test.png");
+
+figure(22);
+surfnorm(peaks(25));
+title("Surfnorm");
+print("IMG/15_Plotting/22_surfnorm.png");
+
+figure(23);
+[x, y, z] = meshgrid (1:5, 1:5, 1:5);
+v = rand (5, 5, 5);
+isosurface (x, y, z, v, .5);
+title("Isosurface");
+print("IMG/15_Plotting/23_isosurface.png");
+
+
+N = 15;    # Increase number of vertices in each direction
+iso = .4;  # Change isovalue to .1 to display a sphere
+lin = linspace (0, 2, N);
+[x, y, z] = meshgrid (lin, lin, lin);
+v = abs ((x-.5).^2 + (y-.5).^2 + (z-.5).^2);
+figure (24);
+
+subplot (2,2,1); view (-38, 20);
+[f, vert] = isosurface (x, y, z, v, iso);
+p = patch ("Faces", f, "Vertices", vert, "EdgeColor", "none");
+pbaspect ([1 1 1]);
+isonormals (x, y, z, v, p)
+set (p, "FaceColor", "green", "FaceLighting", "gouraud");
+light ("Position", [1 1 5]);
+
+subplot (2,2,2); view (-38, 20);
+p = patch ("Faces", f, "Vertices", vert, "EdgeColor", "blue");
+pbaspect ([1 1 1]);
+isonormals (x, y, z, v, p)
+set (p, "FaceColor", "none", "EdgeLighting", "gouraud");
+light ("Position", [1 1 5]);
+
+subplot (2,2,3); view (-38, 20);
+[f, vert, c] = isosurface (x, y, z, v, iso, y);
+p = patch ("Faces", f, "Vertices", vert, "FaceVertexCData", c, ...
+           "FaceColor", "interp", "EdgeColor", "none");
+pbaspect ([1 1 1]);
+isonormals (x, y, z, v, p)
+set (p, "FaceLighting", "gouraud");
+light ("Position", [1 1 5]);
+
+subplot (2,2,4); view (-38, 20);
+p = patch ("Faces", f, "Vertices", vert, "FaceVertexCData", c, ...
+           "FaceColor", "interp", "EdgeColor", "blue");
+pbaspect ([1 1 1]);
+isonormals (x, y, z, v, p)
+set (p, "FaceLighting", "gouraud");
+light ("Position", [1 1 5]);
+print("IMG/15_Plotting/24_isosurface2.png");
